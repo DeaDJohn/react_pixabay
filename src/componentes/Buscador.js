@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 import Error from './Error';
 
-const Buscador = () => {
+const Buscador = ({guardarBusqueda}) => {
 
-    const [terminoBusqueda, guardarTerminoBusqueda] = useState();
+    const [terminoBusqueda, guardarTerminoBusqueda] = useState('');
     const [error, guardarError] = useState(false);
 
     const buscarImagen = e => {
@@ -17,7 +17,8 @@ const Buscador = () => {
         }
         // enviar el termino al componente principal
         guardarError(false);
-        console.log(error);
+        guardarBusqueda(terminoBusqueda);
+        // console.log(error);
     } 
 
     return ( 
